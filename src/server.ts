@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 3333
 const searcher = new YTSeacher();
 
 app.use(bodyParser.json())
-/*app.post("/hook", async (req:any, res:any) => {
+app.post("/hook", async (req:any, res:any) => {
     const { value } = req?.body?.entry[0]?.changes[0]
     
     if (value?.messages) {
@@ -203,10 +203,10 @@ app.use(bodyParser.json())
     }
 
     res.status(200).end()
-})*/
-
-app.get("/hook", (req, res) => {
-    res.send(req.query["hub.challenge"]).status(200).end() // Responding is important
 })
+
+// app.get("/hook", (req, res) => {
+//     res.send(req.query["hub.challenge"]).status(200).end() // Responding is important
+// })
 
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
